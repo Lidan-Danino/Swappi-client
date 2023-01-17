@@ -1,0 +1,17 @@
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.spinner-border {
+  margin: 0 auto;
+}
+body {
+  background: #f5f5ff;
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+}
