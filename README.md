@@ -1,6 +1,4 @@
-
-
-# [👋 live demo 👋](https://anyticket.netlify.app/)
+# [👋 live demo 👋](https://swaappi.netlify.app/)
 
 # Tech Stack
 
@@ -13,8 +11,6 @@
 - Responsive Design;
 - UX & UI;
 - Validation and error handling.
-
-
 
 # Getting Started with Create React App
 
@@ -86,6 +82,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# AnyTicket-client
-# AnyTicket-client
-# AnyTicket-client

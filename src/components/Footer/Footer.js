@@ -5,7 +5,8 @@ function Footer() {
     <footer>
       <div className="footer">
         <div className="row">
-          ANYTICKET Copyright © 2022 AnyTicket - All rights reserved || Designed By: Niv&Lidan
+          SWAPPI Copyright © 2022 Swappi - All rights reserved || Designed By:
+          Niv&Lidan
         </div>
       </div>
     </footer>
