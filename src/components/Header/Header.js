@@ -1,8 +1,18 @@
 import { useContext } from "react";
 import { Context } from "../../ContextStore";
-import { Navbar, NavDropdown, Nav, OverlayTrigger, Tooltip } from "react-bootstrap";
+import {
+  Navbar,
+  NavDropdown,
+  Nav,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import { BsFillPersonFill, BsFillEnvelopeFill, BsFillPlusCircleFill } from "react-icons/bs";
+import {
+  BsFillPersonFill,
+  BsFillEnvelopeFill,
+  BsFillPlusCircleFill,
+} from "react-icons/bs";
 import { IoLogOut } from "react-icons/io5";
 
 import "./Header.css";
@@ -14,7 +24,9 @@ function Header() {
       <div className="container">
         <Navbar.Brand>
           <NavLink className="navbar-brand" to="/">
-            <img className="nav-logo" src="https://res.cloudinary.com/dd5irg4pr/image/upload/v1669128066/anyticket-high-resolution-logo-color-on-transparent-background_nhelaq.png" 
+            <img
+              className="nav-logo"
+              src="https://res.cloudinary.com/dd5irg4pr/image/upload/v1678804264/Swappi_vq6lb5.png"
               alt="Logo-img"
             />
           </NavLink>
@@ -42,11 +54,16 @@ function Header() {
               </NavLink>
 
               <NavDropdown
-                title={<img id="navImg" src={userData.avatar} alt="user-avatar" />}
+                title={
+                  <img id="navImg" src={userData.avatar} alt="user-avatar" />
+                }
                 drop="left"
                 id="collasible-nav-dropdown"
               >
-                <NavLink className="dropdown-item" to={`/profile/${userData._id}`}>
+                <NavLink
+                  className="dropdown-item"
+                  to={`/profile/${userData._id}`}
+                >
                   <BsFillPersonFill />
                   Profile
                 </NavLink>
@@ -83,7 +100,11 @@ function Header() {
               <NavLink className="nav-item" id="nav-sign-in" to="/auth/login">
                 Sign In
               </NavLink>
-              <NavLink className="nav-item" id="nav-sign-up" to="/auth/register">
+              <NavLink
+                className="nav-item"
+                id="nav-sign-up"
+                to="/auth/register"
+              >
                 Sign Up
               </NavLink>
             </Nav>
