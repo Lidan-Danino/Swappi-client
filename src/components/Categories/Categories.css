@@ -1,9 +1,11 @@
 #categories {
   text-align: center;
   padding: 3%;
+  
 }
 #categories > h1 {
   font-family: "Helvetica Neue";
+  
 
   margin-bottom: 7%;
 }
@@ -14,8 +16,6 @@
   width: 78px;
   margin-bottom: 7px;
 }
-
-
 
 #close-image {
   display: inline-block;
@@ -33,11 +33,15 @@
   height: 100px;
   font-size: 1.2rem;
   font-weight: bold;
+  
   color: rgb(255, 255, 255);
   -moz-box-shadow: 10px 10px 5px #ccc;
   -webkit-box-shadow: 10px 10px 5px #ccc;
   box-shadow: 7px 7px 5px #ccc;
-  
+  text-shadow: -1px -1px 0 rgb(0, 0, 0), 
+  1px -1px 0 #000, 
+  -1px 1px 0 #000, 
+  1px 1px 0 #000;
 }
 #close-image:hover {
   font-size: 1.3rem;
