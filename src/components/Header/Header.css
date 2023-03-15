@@ -17,7 +17,7 @@
 }
 
 #addButton {
-  padding: 7px;
+  padding: 10px;
 }
 
 .navbar-nav .dropdown {
@@ -80,8 +80,8 @@
   background-color: #343a40;
 }
 #navImg {
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   object-fit: cover;
   border-radius: 100px;
   border: 1px solid black;
