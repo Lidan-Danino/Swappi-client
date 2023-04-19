@@ -1,6 +1,5 @@
 import { useLocation } from "react-router-dom";
 import { saveAs } from "file-saver";
-import { useState } from "react";
 
 import "./Checkout.css";
 
