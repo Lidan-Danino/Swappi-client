@@ -1,22 +1,12 @@
-import { useEffect } from 'react';
-import { API_URL } from '../services/constants';
+import { API_URL } from "../services/constants";
 
 function LogOut({ history }) {
-  useEffect(() => {
-    const logOut = async () => {
-      try {
-        const response = await fetch(`${API_URL}/auth/logout`);
-        await response.json();
-        history.push('/');
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    logOut();
-  }, [history]);
-
-  return null;
+  fetch(`${API_URL}/auth/logout`)
+    .then((res) => res.json())
+    .then((res) => {
+      history.push("/");
+    })
+    .catch((err) => console.log(err));
 }
 
 export default LogOut;
