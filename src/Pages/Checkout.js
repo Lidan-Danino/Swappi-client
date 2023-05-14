@@ -27,8 +27,6 @@ const Checkout = (props) => {
   );
 
   const location = useLocation();
-  const { fromLocation } = location.state;
-
   const productImage = location.state.image;
   const productName = location.state.title;
   const productPrice = location.state.price;
@@ -51,12 +49,7 @@ const Checkout = (props) => {
             <div className="checkout-container">
               <h3 className="heading-3">Credit card checkout</h3>
               <Input label="Cardholder's Name" type="text" name="name" />
-              <Input
-                label="Card Number"
-                type="number"
-                name="card_number"
-                imgSrc="https://seeklogo.com/images/V/visa-logo-6F4057663D-seeklogo.com.png"
-              />
+              <Input label="Card Number" type="number" name="card_number" imgSrc="https://seeklogo.com/images/V/visa-logo-6F4057663D-seeklogo.com.png" />
               <div className="row">
                 <div className="col">
                   <Input label="Expiration Date" type="month" name="exp_date" />
