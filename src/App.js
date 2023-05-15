@@ -14,15 +14,14 @@ import CreateSell from "./Pages/CreateSell";
 import EditProfile from "./Pages/EditProfile";
 import Messages from "./Pages/Messages";
 import Checkout from "./Pages/Checkout";
-import Profit from "./Pages/Profit";
 import Error404 from "./Pages/Error404";
-import FishingWrapper from "./components/Fishing/FishingWrapper.js"
+import FishingWrapper from "./components/Fishing/FishingWrapper.js";
 
 function App() {
   return (
     <>
       <Header />
-      <FishingWrapper/>
+      {/* <FishingWrapper /> */}
       <Switch>
         <Route path="/" exact component={Categories} />
         <Route path="/categories/:category" exact component={Categories} />
@@ -37,7 +36,6 @@ function App() {
         <Route path="/messages" exact component={Messages} />;
         <Route path="/messages/:id" exact component={Messages} />;
         <Route path="/checkout/:id" exact component={Checkout} />
-        <Route path="/profit" exact component={Profit} />;
         <Route component={Error404} />
       </Switch>
       <Footer />
