@@ -14,7 +14,8 @@ import { Button } from "react-bootstrap";
 function Categories({ match }) {
     
     let currentCategory = match.params.category;
-    
+
+    const [query, setQuery] = useState("");
     const [products, setProduct] = useState([])
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true);
@@ -52,6 +53,10 @@ function Categories({ match }) {
             .catch(err => console.log(err));
     }, [query, currentCategory])
 
+    const handleSearch = (e) => {
+        e.preventDefault()
+        setQuery(e.target.value)
+    }
  
 
     return (
