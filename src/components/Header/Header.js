@@ -16,6 +16,11 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Typography from "@material-ui/core/Typography";
 import LoginIcon from "@material-ui/icons/AccountCircle";
 import RegisterIcon from "@material-ui/icons/PersonAdd";
+import SimpleSider from "../Siders/SimpleSider";
+import '../../components/Categories/CategoriesNav'
+import '../../components/Categories/Categories.css';
+import '../../components/ProductCard/ProductCard.css';
+import { flexbox } from "@mui/system";
 
 const useStyles = makeStyles((theme) => {
   const { spacing, palette } = theme;
@@ -44,6 +49,9 @@ const useStyles = makeStyles((theme) => {
       width: "100px",
       height: "auto",
     },
+    sider: {
+      flexGrow: 1,
+    }
   };
 });
 
@@ -122,7 +130,7 @@ function Header() {
   const classes = useStyles();
   const { userData, setUserData } = useContext(Context);
   const [anchorEl, setAnchorEl] = useState(null);
-
+  const [query, setQuery] = useState("");
   const handleMenu = useCallback((event) => {
     setAnchorEl(event.currentTarget);
   }, []);
@@ -130,6 +138,11 @@ function Header() {
   const handleClose = useCallback(() => {
     setAnchorEl(null);
   }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    setQuery(e.target.value)
+}
 
   return (
     <div className={classes.root}>
@@ -139,6 +152,9 @@ function Header() {
           <Typography variant="h6" className={classes.title}>
             <NavLink className="navbar-brand" to="/">
               <img className={classes.logo} src={LOGO_URL} alt="Logo-img" />
+              <div id="sider">
+                <input className="col-lg-6" type="text" placeholder="Find your ticket..." name="search" value={query} onChange={handleSearch} />
+              </div>
             </NavLink>
           </Typography>
           {userData ? <UserMenu userData={userData} setUserData={setUserData} anchorEl={anchorEl} handleMenu={handleMenu} handleClose={handleClose} /> : <GuestMenu classes={classes} />}

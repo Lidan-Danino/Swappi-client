@@ -17,7 +17,6 @@ function Categories({ match }) {
     
     const [products, setProduct] = useState([])
     const [page, setPage] = useState(1);
-    const [query, setQuery] = useState("");
     const [loading, setLoading] = useState(true);
     const [sort, setSort] = useState('oldest');
 
@@ -53,19 +52,10 @@ function Categories({ match }) {
             .catch(err => console.log(err));
     }, [query, currentCategory])
 
-    const handleSearch = (e) => {
-        e.preventDefault()
-        setQuery(e.target.value)
-
-       
-    }
-    
+ 
 
     return (
         <>
-            <div id="sider">
-                <input className="col-lg-6" type="text" placeholder="Find your ticket..." name="search" value={query} onChange={handleSearch} />
-            </div>
             <CategoriesNav />
             <div className="container">
             

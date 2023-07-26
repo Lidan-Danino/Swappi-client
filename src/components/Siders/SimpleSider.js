@@ -1,4 +1,5 @@
 import './SimpleSider.css'
+import './SearchSider.css'
 
 function SimpleSider({params}) {
     return (
