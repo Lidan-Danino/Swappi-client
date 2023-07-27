@@ -16,11 +16,9 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Typography from "@material-ui/core/Typography";
 import LoginIcon from "@material-ui/icons/AccountCircle";
 import RegisterIcon from "@material-ui/icons/PersonAdd";
-import SimpleSider from "../Siders/SimpleSider";
-import '../../components/Categories/CategoriesNav'
+import CategoriesNav from "../../components/Categories/CategoriesNav"; 
 import '../../components/Categories/Categories.css';
-import '../../components/ProductCard/ProductCard.css';
-import { flexbox } from "@mui/system";
+import { Grow } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => {
   const { spacing, palette } = theme;
@@ -130,7 +128,7 @@ function Header() {
   const classes = useStyles();
   const { userData, setUserData } = useContext(Context);
   const [anchorEl, setAnchorEl] = useState(null);
-  const [query, setQuery] = useState("");
+
   const handleMenu = useCallback((event) => {
     setAnchorEl(event.currentTarget);
   }, []);
@@ -139,23 +137,33 @@ function Header() {
     setAnchorEl(null);
   }, []);
 
+  // Define the query state and handleSearch function here
+  const [query, setQuery] = useState("");
   const handleSearch = (e) => {
-    e.preventDefault()
-    setQuery(e.target.value)
-}
+    setQuery(e.target.value);
+  };
 
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
-        {/* Use the className prop to apply the style */}
-        <Toolbar>
+        <Toolbar >
           <Typography variant="h6" className={classes.title}>
-            <NavLink className="navbar-brand" to="/">
+            <NavLink
+              className="navbar-brand"
+              to="/"
+              style={{
+                display: "flex",
+                flexDirection: "row", 
+                alignItems: "center", 
+              }}
+            >
               <img className={classes.logo} src={LOGO_URL} alt="Logo-img" />
-              <div id="sider">
+              <div id="sider" style={{ flex: 1 }}>
                 <input className="col-lg-6" type="text" placeholder="Find your ticket..." name="search" value={query} onChange={handleSearch} />
               </div>
             </NavLink>
+
+            {/* Move the search bar component here */}
           </Typography>
           {userData ? <UserMenu userData={userData} setUserData={setUserData} anchorEl={anchorEl} handleMenu={handleMenu} handleClose={handleClose} /> : <GuestMenu classes={classes} />}
         </Toolbar>

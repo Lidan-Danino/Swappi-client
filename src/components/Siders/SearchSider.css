@@ -3,10 +3,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 27rem;
   text-align: center;
-  vertical-align: middle;
-  padding: 113px;
+  flex-direction: column;
+  align-items: center; 
+  padding: 6px;
 }
 
 #sider > input { 
