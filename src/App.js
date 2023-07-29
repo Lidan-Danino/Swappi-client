@@ -16,6 +16,7 @@ import Messages from "./Pages/Messages";
 import Checkout from "./Pages/Checkout";
 import Error404 from "./Pages/Error404";
 import FishingWrapper from "./components/Fishing/FishingWrapper.js";
+import ContactUs from "./Pages/ContactUs";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/messages" exact component={Messages} />;
         <Route path="/messages/:id" exact component={Messages} />;
         <Route path="/checkout/:id" exact component={Checkout} />
+        <Route path="/contact" exact component={ContactUs} />;
         <Route component={Error404} />
       </Switch>
       <Footer />
