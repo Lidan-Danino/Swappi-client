@@ -136,8 +136,7 @@ function Header() {
   const handleClose = useCallback(() => {
     setAnchorEl(null);
   }, []);
-
-  // Define the query state and handleSearch function here
+  //added the useState from the Categories.js file
   const [query, setQuery] = useState("");
   const handleSearch = (e) => {
     setQuery(e.target.value);
@@ -162,7 +161,6 @@ function Header() {
                 <input className="col-lg-6" type="text" placeholder="Find your ticket..." name="search" value={query} onChange={handleSearch} />
               </div>
             </NavLink>
-
             {/* Move the search bar component here */}
           </Typography>
           {userData ? <UserMenu userData={userData} setUserData={setUserData} anchorEl={anchorEl} handleMenu={handleMenu} handleClose={handleClose} /> : <GuestMenu classes={classes} />}
