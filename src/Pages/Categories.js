@@ -9,39 +9,54 @@ import '../components/Categories/Categories.css';
 import '../components/ProductCard/ProductCard.css';
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import Header from '../components/Header/Header';
 
-function Categories({ match, handleSearch, query }) {
+function Categories({ match}) {
+
+  let currentCategory = match.params.category;
+
   const [products, setProduct] = useState([])
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [sort, setSort] = useState('oldest');
-
-  const currentCategory = window.location.pathname.split('/')[2] || 'all';
-
-  useEffect(() => {
-    setPage(1);
-    setLoading(true);
-    getAll(1, currentCategory)
-      .then(res => {
-        setProduct(res.products);
-        setLoading(false);
-        setPage(page => page + 1);
-      })
-      .catch(err => console.log(err));
-  }, [currentCategory]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
-    setPage(1);
-    setLoading(true);
-    getAll(2, currentCategory)
+
+      setPage(1);
+      setLoading(true);
+      setQuery("")
+      getAll(1, currentCategory)
       .then(res => {
-        setProduct(products => [...products, ...res.products]);
-        setLoading(false);
-        setPage(page => page + 1);
+          setProduct(res.products);
+          setLoading(false);
+          setPage(page => page + 1);
+          setQuery("");
       })
       .catch(err => console.log(err));
-  }, [currentCategory]);
+  }, [currentCategory, setProduct])
 
+
+  useEffect(() => {
+      setPage(1);
+      setLoading(true);
+      getAll(2, currentCategory, query)
+          .then(res => {
+              if (query === "") {
+                  setProduct(products => [...products, ...res.products]);
+              } else {
+                  setProduct(res.products)
+              }
+              setLoading(false);
+              setPage(page => page + 1);
+          })
+          .catch(err => console.log(err));
+  }, [query, currentCategory])
+
+  const handleSearch = (e) => {
+      e.preventDefault()
+      setQuery(e.target.value)
+  }
   return (
     <>
       <CategoriesNav />

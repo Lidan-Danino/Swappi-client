@@ -124,7 +124,7 @@ const GuestMenu = ({ classes }) => (
   </ButtonGroup>
 );
 
-function Header() {
+function Header({ handleSearch, query }) {
   const classes = useStyles();
   const { userData, setUserData } = useContext(Context);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -137,10 +137,10 @@ function Header() {
     setAnchorEl(null);
   }, []);
   //added the useState from the Categories.js file
-  const [query, setQuery] = useState("");
-  const handleSearch = (e) => {
-    setQuery(e.target.value);
-  };
+  // const [query, setQuery] = useState("");
+  // const handleSearch = (e) => {
+  //   setQuery(e.target.value);
+  // };
 
   return (
     <div className={classes.root}>
