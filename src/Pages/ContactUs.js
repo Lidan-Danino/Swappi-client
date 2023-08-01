@@ -1,13 +1,12 @@
-import "./ContactUs.css";
+import "../components/Contact/ContactUs.css"
 import ContactLogo from '../assets/logo-image.jpg';
+import SubmitForm from '../components/Contact/Submit-form';
 
 function ContactUs() {
     return (
         <div>
             <head>
-
                 <meta charSet="UTF-8" />
-
                 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
             </head>
             <body>
@@ -26,28 +25,7 @@ function ContactUs() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="submit-from">
-                            <h4 className="third-text text">Contact Us</h4>
-                            <form action="">
-                                <div className="input-box">
-                                    <input type="text" className="input" required/>
-                                    <label for="">Name</label>
-                                </div>
-                                <div className="input-box">
-                                    <input type="email" className="input" required/>
-                                    <label for="">Email</label>
-                                </div>
-                                <div className="input-box">
-                                    <input type="tel" className="input" required/>
-                                    <label for="">Phone</label>
-                                </div>
-                                <div className="input-box">
-                                    <textarea name="" className="input" cols="30" rows="10" required></textarea>
-                                    <label for="">Message</label>
-                                </div>
-                                <input type="submit" value="Submit" className="btn"/>
-                            </form>
-                        </div>
+                        <SubmitForm/>
                     </div>
                 </div>
             </body>

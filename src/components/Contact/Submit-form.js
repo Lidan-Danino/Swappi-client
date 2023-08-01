@@ -1,4 +1,4 @@
-
+import '../Contact/ContactUs.css';
 function SubmitForm() {
   return (
     <div className="submit-from">
