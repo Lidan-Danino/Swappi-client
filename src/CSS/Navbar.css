@@ -1,0 +1,106 @@
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center vertically */
+  background-color: #B1D573;
+  color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 13px 13px;
+}
+
+/* Left section styles (HamburgerMenu) */
+.left-section {
+  display: flex;
+  justify-content: flex-start; /* Align content to the start (left) */
+  align-items: center; /* Vertically center content */
+}
+
+/* Middle section styles (SearchBar) */
+.middle-section {
+  flex: 2;
+  display: flex; /* Add display:flex */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/* Right section styles (ProfileArea) */
+.right-section {
+  display: flex;
+  justify-content: center; /* Center content vertically */
+}
+
+/* Style for HamburgerMenu icon (you can adjust this as needed) */
+.hamburger-menu img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Style for focused SearchBar */
+.search-bar {
+  background-color: #fff; /* Initial background color */
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, border-radius 0.5s ease; /* Add transitions */
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  color: rgb(49, 48, 48);
+  outline: none; /* Remove outline when focused */
+  width: 65%; /* Initial width */
+  
+}
+
+/* Style for focused SearchBar input */
+.middle-section.focused input.focused {
+  background-color: #fff; /* Background color when focused */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); /* Box shadow when focused */
+  border-radius: 4px;
+  width: 80%; /* Use 80% of the parent width when focused */
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, border-radius 0.5s ease, width 0.5s ease; /* Add width transition */
+}
+
+/* Style for ProfileArea buttons and user avatar (you can adjust this as needed) */
+.profile-area button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.profile-area img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px; 
+  }
+
+  .middle-section {
+    flex: 1; 
+    justify-content: flex-start; 
+    padding: 5px; 
+  }
+
+  .middle-section.focused input.focused {
+    width: 100%; 
+  }
+
+  .profile-area {
+    display: none; /* Hide ProfileArea for smaller screens */
+  }
+
+  .hamburger-menu img {
+    margin-right: 0; /* Remove right margin for HamburgerMenu icon */
+  }
+}

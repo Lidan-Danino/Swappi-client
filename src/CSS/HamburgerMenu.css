@@ -1,0 +1,70 @@
+/* Hamburger menu styles */
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 10px; /* Adjust margin as needed */
+  padding: 10px 20px; /* Increase padding to make the button wider */
+}
+
+.hamburger-menu .menu-button img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Open state styles */
+.hamburger-menu.open .menu-options {
+  display: block;
+  position: absolute;
+  top: 95%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-options {
+  display: none;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px 0; /* Add padding for spacing */
+}
+
+.menu-options.show {
+  display: block;
+}
+
+.menu-options ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-options .menu-item {
+  color: #000; /* Black text color */
+  padding: 10px;
+  margin: 5px 0; /* Add margin between options */
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 20px 20px;
+  transition: background-color 0.3s, border-radius 0.3s; /* Add transitions for smooth hover effect */
+  border-radius: 5px; /* Add border radius */
+}
+
+/* Style for the menu items when hovered */
+.menu-item:hover {
+  background-color: #007bff; /* Blue background color on hover */
+  border-radius: 10px; /* Increased border radius on hover */
+  color: #fff; /* Text color on hover */
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    margin-left: 0; 
+    padding: 10px; 
+  }
+
+  .menu-item {
+    padding: 10px; 
+  }
+}
