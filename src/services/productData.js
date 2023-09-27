@@ -1,4 +1,5 @@
 import { API_URL } from "./constants";
+import { getAll } from "./productData";
 
 export async function getAll(page, category, query) {
   if (query !== "" && query !== undefined) {

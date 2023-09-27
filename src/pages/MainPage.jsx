@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import CustomDiv from '../components/CustomDiv';
 import { StyledButton, Avatar, MainContent, MainHeading, SubHeading } from '../assets/styles'; // Import styled components from your styles.js
@@ -6,6 +6,7 @@ import images from '../assets/images'; // Import image paths from your images.js
 import CategoryGrid from '../components/CategoryGrid';
 import CategoryImg from '../assets/images/Category.jpeg';
 import Footer from '../components/Footer';
+import { fetchCategories } from '../services/api';
 
 
 {/*API Calls . get categories       */}
@@ -64,6 +65,23 @@ const nonHotCategories = [
 
 function MainPage() {
   const [showNonHot, setShowNonHot] = useState(false);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    // Fetch categories when the component mounts
+    async function fetchCategoryData() {
+      try {
+        const categoryData = await fetchCategories();
+        setCategories(categoryData);
+      } catch (error) {
+        // Handle error
+        console.error("Error fetching categories:", error);
+      }
+    }
+
+    fetchCategoryData();
+  }, []); // Empty dependency array to fetch data once when the component mounts
+
 
   return (
     <div className="App">
@@ -79,7 +97,7 @@ function MainPage() {
         <CustomDiv />
 
         {/* "HOT" Categories Section */}
-        <CategoryGrid categories={hotCategories} />
+        <CategoryGrid categories={categories} />
 
         {/* Filter Button for "NON HOT" Categories (on the left) */}
         <div
@@ -97,9 +115,9 @@ function MainPage() {
           {showNonHot && <CategoryGrid categories={nonHotCategories} />}
         </div>
       </MainContent>
-      <Footer/>
+      <Footer />
     </div>
   );
-}
+};
 
 export default MainPage;
