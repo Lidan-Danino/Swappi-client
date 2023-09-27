@@ -9,7 +9,6 @@ import Footer from '../components/Footer';
 import { fetchCategories } from '../services/api';
 
 
-{/*API Calls . get categories       */}
 const hotCategories = [
   {
     title: 'Category 1',
