@@ -48,6 +48,28 @@ export const SubHeading = styled.p`
   width: 700px;
 `;
 
+export const ProductGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+`;
 
-// Add more styled components as needed
-export default {StyledButton, Avatar} ;
+export const ProductGridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: start; /* Adjust alignment as needed */
+  justify-content: center;
+  margin-top: 20px; /* Adjust margin as needed */
+`;
+
+export default {
+  StyledButton,
+  Avatar,
+  MainContent,
+  MainHeading,
+  SubHeading,
+  ProductGrid,
+  ProductItem,
+  ProductGridContainer,
+};
