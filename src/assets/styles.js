@@ -70,6 +70,5 @@ export default {
   MainHeading,
   SubHeading,
   ProductGrid,
-  ProductItem,
   ProductGridContainer,
 };
