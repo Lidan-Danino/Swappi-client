@@ -1,11 +1,9 @@
+// CategoryGrid.js
 import React, { useEffect, useState } from 'react';
 import Category from './Category';
-import { getAll } from '../../services/productData'; 
-
-
-{/* CategoryGrid.js:
-The CategoryGrid component displays a grid of categories. It fetches and loads categories dynamically as the
-user scrolls down the page. It utilizes the Category component to render individual category items. */}
+import { getAll } from '../../services/productData';
+import './Category.css';
+import './CategoryGrid.css';
 
 function CategoryGrid({ selectedCategory }) {
   const [categories, setCategories] = useState([]);
@@ -61,14 +59,16 @@ function CategoryGrid({ selectedCategory }) {
       ) : categories.length === 0 ? (
         <div>No categories found.</div>
       ) : (
-        categories.map((category) => (
-          <Category
-            key={category.id}
-            title={category.title}
-            description={category.description}
-            image={category.image}
-          />
-        ))
+        <div className="category-grid">
+          {categories.map((category) => (
+            <Category
+              key={category.id}
+              title={category.title}
+              description={category.description}
+              image={category.image}
+            />
+          ))}
+        </div>
       )}
       {!hasMore && <div>No more products to load.</div>}
     </div>

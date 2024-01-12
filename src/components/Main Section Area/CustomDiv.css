@@ -1,0 +1,116 @@
+/* CustomDiv.css */
+
+.custom-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  color: white;
+  margin: 3em; 
+  border-radius: 3em; 
+  position: relative;
+  height: 450px;
+  max-width: 100%;
+  /* Keep those 3 lines here for Image resolution*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: visible;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 85%;
+  
+}
+
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1.5em;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.background-image svg {
+  width: 100%;
+  height: 100%;
+}
+
+.text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 60%;
+}
+
+.main-section {
+  font-size: 3em; 
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 2em;
+}
+
+.sub-section {
+  margin-top: 2em; 
+  text-align: left;
+}
+
+.third-section {
+  margin-top: auto;
+  text-align: left;
+  font-size: 1.5em; 
+}
+
+.chat-button {
+  padding: 2em; 
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: -2em; 
+  right: 1em; 
+  border-radius: 1.5em;
+  margin-top: 2em; 
+}
+
+.chat-popup {
+  position: fixed;
+  bottom: 3em; 
+  right: 3em;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 2em;
+  z-index: 1;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .custom-div {
+    flex-direction: column;
+    height: auto;
+    padding: 2em; /* Adjusted padding for responsiveness */
+  }
+
+  .text-container {
+    max-width: 100%;
+    margin-top: 2em; /* Adjusted margin for responsiveness */
+  }
+
+  .chat-button {
+    position: relative;
+    bottom: 0;
+    right: 0;
+  }
+}
