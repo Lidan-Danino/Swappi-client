@@ -51,6 +51,7 @@ function MainPage() {
             <div key={product._id}>{product.title}</div>
           ))}
         </div> */}
+        
       </MainContent>
 
       <Footer />

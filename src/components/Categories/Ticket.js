@@ -1,7 +1,7 @@
 import React from 'react';
-import './Category.css';
+import './Ticket.css';
 
-function Category({ title, description, image }) {
+function Ticket({ title, description, image }) {
   return (
     <div className="category" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', borderRadius:'10px', margin:'20px' }}>
       <div>
@@ -16,4 +16,4 @@ function Category({ title, description, image }) {
   );
 }
 
-export default Category;
+export default Ticket;

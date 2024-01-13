@@ -17,7 +17,7 @@ const HamburgerMenu = () => {
           alt="Hamburger Menu"
         />
       </div>
-      <div className={`menu-options ${menuOpen ? 'show' : ''}`}>
+      <div className={`menu-options ${menuOpen ? 'show' : ''}`} style={{zIndex:'999'}}>
         {/* Add your menu options here */}
         <ul>
           <li className="menu-item">Option 1</li>

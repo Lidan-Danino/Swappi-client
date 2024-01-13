@@ -1,8 +1,8 @@
 // CategoryGrid.js
 import React, { useEffect, useState } from 'react';
-import Category from './Category';
+import Ticket from './Ticket.js';
 import { getAll } from '../../services/productData';
-import './Category.css';
+import './Ticket.css';
 import './CategoryGrid.css';
 
 function CategoryGrid({ selectedCategory }) {
@@ -61,7 +61,7 @@ function CategoryGrid({ selectedCategory }) {
       ) : (
         <div className="category-grid">
           {categories.map((category) => (
-            <Category
+            <Ticket
               key={category.id}
               title={category.title}
               description={category.description}

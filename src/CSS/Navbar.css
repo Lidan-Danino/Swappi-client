@@ -50,7 +50,6 @@
   color: rgb(49, 48, 48);
   outline: none; /* Remove outline when focused */
   width: 65%; /* Initial width */
-  
 }
 
 /* Style for focused SearchBar input */
